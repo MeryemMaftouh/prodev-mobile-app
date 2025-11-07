@@ -3,6 +3,9 @@ import { styles } from "@/styles/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { HEROLOGO, GOOGLELOGO, FACEBOOKLOGO } from "@/constants";
+import { HEROLOGOGREEN } from "@/constants";
+import { useRouter } from 'expo-router';
+const router = useRouter();
 
 export default function Join() {
   return (
@@ -11,8 +14,9 @@ export default function Join() {
 
         {/* Top Navigation */}
         <View style={styles.iconsection}>
-          <Ionicons name="arrow-back" size={25} />
+              <Ionicons name="arrow-back" size={25} onPress={() => router.push('/')} />
           <Image source={HEROLOGO} />
+           <Image source={HEROLOGOGREEN} />
         </View>
 
         {/* Title */}

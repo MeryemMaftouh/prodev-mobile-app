@@ -2,6 +2,9 @@ import { Text, TextInput, View, TouchableOpacity, Image, ScrollView } from "reac
 import { styles } from "@/styles/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { HEROLOGOGREEN } from "@/constants";
+import { useRouter } from 'expo-router';
+const router = useRouter();
 
 export default function Join() {
   return (
@@ -10,13 +13,13 @@ export default function Join() {
         <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
           {/* Header Section */}
           <View style={styles.iconsection}>
-            <Ionicons name="arrow-back" size={25} />
-            <Image source={require("../assets/images/logo.png")} />
+            <Ionicons name="arrow-back" size={25} onPress={() => router.push('/')} />
+               <Image source={HEROLOGOGREEN} />
           </View>
 
           {/* Title Section */}
           <View style={styles.titleTextGroup}>
-            <Text style={styles.titleText}>Create</Text>
+            <Text style={styles.titleText}>Create Your</Text>
             <Text style={styles.titleText}>Account</Text>
             <Text style={styles.subText}>
               Enter your details below to create a new account.
