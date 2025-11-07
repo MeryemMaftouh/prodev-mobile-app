@@ -7,7 +7,6 @@ export default function Join() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        {/* Scrollable Content */}
         <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
           {/* Header Section */}
           <View style={styles.iconsection}>
