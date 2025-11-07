@@ -1,33 +1,37 @@
 import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
-import { styles } from "@/styles";
+import { styles } from "@/styles/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { HEROLOGO, GOOGLELOGO, FACEBOOKLOGO } from "@/constants";
 
-export default function Index() {
+export default function Join() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <View style={styles.navGroup}>
+
+        {/* Top Navigation */}
+        <View style={styles.iconsection}>
           <Ionicons name="arrow-back" size={25} />
-          <Image source={require('@/assets/images/logo.png')} />
+          <Image source={HEROLOGO} />
         </View>
 
-        <Text style={styles.largeText}>Sign in to your</Text>
-        <Text style={styles.largeText}>Account</Text>
-        <Text style={styles.smallText}>
-          Enter your email and password to sign in.
-        </Text>
+        {/* Title */}
+        <View style={styles.titleTextGroup}>
+          <Text style={styles.titleText}>Create Account</Text>
+          <Text style={styles.subText}>Sign up to get started!</Text>
+        </View>
 
+        {/* Form */}
         <View style={styles.formGroup}>
           <View>
-            <Text style={styles.placeholderText}>Email</Text>
-            <TextInput keyboardType="email-address" style={styles.inputField} />
+            <Text style={styles.formLabel}>Email</Text>
+            <TextInput style={styles.formControl} keyboardType="email-address" />
           </View>
 
-          <View style={{ marginTop: 20 }}>
-            <Text style={styles.placeholderText}>Password</Text>
-            <View style={styles.passwordGroup}>
-              <TextInput style={{ flex: 1 }} secureTextEntry />
+          <View>
+            <Text style={styles.formLabel}>Password</Text>
+            <View style={styles.formPasswordControl}>
+              <TextInput style={styles.passwordControl} secureTextEntry />
               <FontAwesome name="eye-slash" size={24} color="#7E7B7B" />
             </View>
           </View>
@@ -35,35 +39,35 @@ export default function Index() {
           <Text style={styles.forgotPasswordText}>Forgot password?</Text>
         </View>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Sign in</Text>
+        {/* Primary button */}
+        <TouchableOpacity style={styles.primaryButton}>
+          <Text style={styles.buttonText}>Join</Text>
         </TouchableOpacity>
 
+        {/* Divider */}
         <View style={styles.dividerGroup}>
           <View style={styles.divider}></View>
           <Text style={styles.dividerText}>OR</Text>
           <View style={styles.divider}></View>
         </View>
 
-        <View style={styles.socialMediaButtonGroup}>
-          <TouchableOpacity style={styles.socialMediaButton}>
-            <View style={{ flexDirection:"row", alignItems:"center", gap:5 }}>
-              <Image source={require("@/assets/images/google.png")} />
-              <Text style={styles.socialMediaButtonText}>Continue with Google</Text>
-            </View>
+        {/* Social login buttons */}
+        <View style={styles.secondaryButtonGroup}>
+          <TouchableOpacity style={styles.secondaryButton}>
+            <Image source={GOOGLELOGO} />
+            <Text style={styles.secondaryButtonText}>Continue with Google</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.socialMediaButton}>
-            <View style={{ flexDirection:"row", alignItems:"center", gap:5 }}>
-              <Image source={require("@/assets/images/facebook.png")} />
-              <Text style={styles.socialMediaButtonText}>Continue with Facebook</Text>
-            </View>
+          <TouchableOpacity style={styles.secondaryButton}>
+            <Image source={FACEBOOKLOGO} />
+            <Text style={styles.secondaryButtonText}>Continue with Facebook</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.subTextGroup}>
-          <Text style={styles.subText}>Don't have an account?</Text>
-          <Text style={styles.subTextJoin}> Join now</Text>
+        {/* Signup subtext */}
+        <View style={styles.signupgroup}>
+          <Text style={styles.signupTitleText}>Already have an account?</Text>
+          <Text style={styles.signupSubTitleText}> Sign in</Text>
         </View>
 
       </SafeAreaView>
