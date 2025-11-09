@@ -1,4 +1,7 @@
 import { Stack } from "expo-router";
+import { ScrollView } from "react-native";
+import "../styles/global.css";
+
 
 export default function RootLayout() {
   return (
@@ -7,6 +10,7 @@ export default function RootLayout() {
       <Stack.Screen name="join" />
       <Stack.Screen name="signin" />
       <Stack.Screen name="(home)" />
+
     </Stack>
   );
 }
