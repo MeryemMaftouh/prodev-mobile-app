@@ -50,9 +50,11 @@ export default function Index() {
               </TouchableOpacity>
             </View>
 
-            {/* Subtext */}
+            {/* ✅ Continue to Home */}
             <View style={styles.buttonGroupSubText}>
-              <Text style={styles.titleSubText}>Continue to home</Text>
+              <TouchableOpacity onPress={() => router.push("/(home)")}>
+                <Text style={styles.titleSubText}>Continue to home</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ImageBackground>
